@@ -1,0 +1,18 @@
+.row{
+    margin-bottom: 10px;
+}
+.track{
+    display: inline-block;
+    margin-right: 15px;
+}
+.trackWrap{
+    background: gold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.trackWrap:hover{
+    background: goldenrod;
+}
+.trackDuration{
+    color: #cccccc;
+}
