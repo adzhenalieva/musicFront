@@ -1,18 +1,33 @@
-.row{
+
+.Row{
     margin-bottom: 10px;
 }
-.track{
+.Track{
     display: inline-block;
     margin-right: 15px;
 }
-.trackWrap{
+.TrackWrap{
     background: gold;
     padding: 5px 10px;
     border-radius: 5px;
 }
-.trackWrap:hover{
-    background: goldenrod;
-}
-.trackDuration{
+
+.TrackDuration{
     color: #cccccc;
+}
+.Play{
+    padding-left: 25px;
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+.Play::before{
+    content: "";
+    background: url('../../assets/images/play-button.png') no-repeat 0;
+    background-size: contain;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 3px;
+    left: 0;
 }

@@ -8,7 +8,7 @@ const initialState = {
     albumArtist: []
 };
 
-const userReducer = (state = initialState, action) => {
+const albumReducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_ALBUMS_SUCCESS:
             return {
@@ -30,4 +30,4 @@ const userReducer = (state = initialState, action) => {
             return state;
     }
 };
-export default userReducer;
+export default albumReducer;

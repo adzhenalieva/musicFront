@@ -1,16 +1,30 @@
-import {FETCH_TRACKS_FAILURE, FETCH_TRACKS_SUCCESS} from "../actions/trackActions";
+import {CLOSE_MODAL, FETCH_TRACKS_FAILURE, FETCH_TRACKS_SUCCESS, SHOW_MODAL} from "../actions/trackActions";
 
 const initialState = {
     tracks: [],
-    error: null
+    error: null,
+    show: false
 };
 
-const userReducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_TRACKS_SUCCESS:
             return {
                 ...state,
-                tracks: action.data
+                tracks: action.data,
+                link: action.link
+            };
+        case CLOSE_MODAL:
+            return {
+                ...state,
+                link: null,
+                show: false
+            };
+        case SHOW_MODAL:
+            return {
+                ...state,
+                link: action.link,
+                show: true
             };
         case FETCH_TRACKS_FAILURE:
             return {
@@ -21,4 +35,4 @@ const userReducer = (state = initialState, action) => {
             return state;
     }
 };
-export default userReducer;
+export default reducer;

@@ -1,9 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from "react-redux";
-import {fetchArtistsById} from "../store/actions/artistActions";
+import {fetchArtistsById} from "../../store/actions/artistActions";
 import {CardColumns} from "reactstrap";
-import AlbumsList from "../components/AlbumsList/AlbumsList";
-import {fetchAlbumsByArtist} from "../store/actions/albumActions";
+import AlbumsList from "../../components/AlbumsList/AlbumsList";
+import {fetchAlbumsByArtist} from "../../store/actions/albumActions";
 
 
 class ArtistById extends Component {

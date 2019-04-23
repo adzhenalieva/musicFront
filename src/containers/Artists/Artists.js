@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from "react-redux";
-import ArtistsList from "../components/ArtistsList/ArtistsList";
-import {fetchArtists} from "../store/actions/artistActions";
+import ArtistsList from "../../components/ArtistsList/ArtistsList";
+import {fetchArtists} from "../../store/actions/artistActions";
 
 
 class Artists extends Component {
