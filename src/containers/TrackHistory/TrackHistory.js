@@ -21,7 +21,6 @@ class TrackHistory extends Component {
     };
 
     render() {
-        console.log(this.props.trackHistory);
         return (
             <div>
                 <h1>
