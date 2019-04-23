@@ -20,6 +20,7 @@ const usersReducer = (state = initialState, action) => {
             };
         case REGISTER_USER_SUCCESS:
             return {...state,
+                user: action.user,
                 registerError: null};
         case REGISTER_USER_FAILURE:
             return {...state,
