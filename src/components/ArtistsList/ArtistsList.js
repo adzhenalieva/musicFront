@@ -7,9 +7,9 @@ const ArtistsList = props => {
         <Card className="mb-5" onClick={props.click}>
             <CardBody>
                 <ArtistThumbnail image={props.image}/>
-                <strong className="ml-5">
+                <p><strong >
                     {props.artist}
-                </strong>
+                </strong></p>
                 <p>{props.published}</p>
             </CardBody>
         </Card>
