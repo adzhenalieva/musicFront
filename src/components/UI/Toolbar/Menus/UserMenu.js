@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {DropdownItem, DropdownMenu, DropdownToggle, NavLink, UncontrolledDropdown} from "reactstrap";
 import {NavLink as RouterNavLink} from "react-router-dom";
 
@@ -9,6 +9,8 @@ const UserMenu = ({user, logout}) => (
             Hello, {user.username}
         </DropdownToggle>
         <DropdownMenu right>
+            {user.role === 'user' ?
+                <Fragment>
             <DropdownItem>
                 <NavLink tag={RouterNavLink} to="/track_history" exact>Track History</NavLink>
             </DropdownItem>
@@ -21,6 +23,8 @@ const UserMenu = ({user, logout}) => (
             <DropdownItem>
                 <NavLink tag={RouterNavLink} to="/tracks/new" exact>Add new track</NavLink>
             </DropdownItem>
+                </Fragment>
+                : null }
             <DropdownItem divider/>
             <DropdownItem className="ml-2" onClick={logout}>
                 Log out

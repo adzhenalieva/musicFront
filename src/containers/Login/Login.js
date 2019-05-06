@@ -27,9 +27,9 @@ class Login extends Component {
             <Fragment>
                 <h2 className="mb-4">Login</h2>
 
-                {this.props.error && (
+                {this.props.error && this.props.error.global && (
                     <Alert color="danger">
-                        {this.props.error.error || this.props.error.global}
+                       Check internet connection!
                     </Alert>
                 )}
                 <Form onSubmit={this.submitFormHandler}>
@@ -39,6 +39,7 @@ class Login extends Component {
                         type="text"
                         value={this.state.username}
                         onChange={this.inputChangeHandler}
+                        error={this.props.error}
                         placeholder="Enter username you registered with"
                         autoComplete="current-username"
                     />
@@ -47,6 +48,7 @@ class Login extends Component {
                         title="Password"
                         type="password"
                         value={this.state.password}
+                        error={this.props.error}
                         onChange={this.inputChangeHandler}
                         placeholder="Enter your password"
                         autoComplete="current-password"

@@ -5,7 +5,7 @@ import AlbumThumbnail from "../AlbumThumbnail/AlbumThumbnail";
 
 const AlbumsList = props => {
     return (
-        <Card body inverse  color="warning" className="mb-5" onClick={props.click}>
+        <Card  className="mb-5" onClick={props.click}>
             <CardBody className="ml-5">
                 <CardTitle>
                     <strong> {props.artist}</strong>

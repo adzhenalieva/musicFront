@@ -20,8 +20,8 @@ class AlbumById extends Component {
         this.props.onFetchTracks(id);
     }
 
-    addTrack = (id, link) => {
-        if (this.props.user) {
+    addTrack = (id, link, published) => {
+        if (published && this.props.user) {
             this.props.addTrack({track: id})
         }
         this.props.showModal(link)
@@ -34,7 +34,7 @@ class AlbumById extends Component {
                 <h1 className="mb-3">
                     {this.props.artist}
                 </h1>
-                <h3 className="mb-3">{this.props.album.title}</h3>
+                <h3 className="mb-3">Album title: {this.props.album.title}</h3>
 
                 {this.props.tracks.map(track => (
                     <TrackList
@@ -42,7 +42,7 @@ class AlbumById extends Component {
                         title={track.title}
                         duration={track.duration}
                         number={track.number}
-                        play={() => this.addTrack(track._id, track.link)}
+                        play={() => this.addTrack(track._id, track.link, track.published)}
                         published={track.published ? null : 'unpublished'}/>
                 ))}
 

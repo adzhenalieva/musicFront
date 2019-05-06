@@ -54,7 +54,6 @@ class TrackAdd extends Component {
     submitFormHandler = event => {
         event.preventDefault();
         const formData = {...this.state};
-        console.log(formData);
         this.props.sendTrack(formData);
 
     };

@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {connect} from "react-redux";
 import ArtistsList from "../../components/ArtistsList/ArtistsList";
 import {fetchArtists} from "../../store/actions/artistActions";
+import {CardColumns} from "reactstrap";
 
 
 class Artists extends Component {
@@ -22,14 +23,16 @@ class Artists extends Component {
                 <h1>
                     Artists
                 </h1>
-                {this.props.artists.map(artist => (
-                    <ArtistsList
-                        key={artist._id}
-                        artist={artist.artist}
-                        image={artist.image}
-                        click={() => this.goToArtist(artist._id)}
-                        published={artist.published ? null : 'unpublished'}/>
-                ))}
+                <CardColumns>
+                    {this.props.artists.map(artist => (
+                        <ArtistsList
+                            key={artist._id}
+                            artist={artist.artist}
+                            image={artist.image}
+                            click={() => this.goToArtist(artist._id)}
+                            published={artist.published ? null : 'unpublished'}/>
+                    ))}
+                </CardColumns>
             </Fragment>
         );
     }
