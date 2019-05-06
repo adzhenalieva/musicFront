@@ -3,7 +3,8 @@ import {connect} from "react-redux";
 import {fetchArtistsById} from "../../store/actions/artistActions";
 import {CardColumns} from "reactstrap";
 import AlbumsList from "../../components/AlbumsList/AlbumsList";
-import {fetchAlbumsByArtist} from "../../store/actions/albumActions";
+import {fetchAlbums} from "../../store/actions/albumActions";
+
 
 
 class ArtistById extends Component {
@@ -25,6 +26,7 @@ class ArtistById extends Component {
                 <h1>
                     {this.props.artist.artist}
                 </h1>
+                <p> {this.props.artist.info}</p>
                 <CardColumns>
                     {this.props.albums.map(album => (
                         <AlbumsList
@@ -32,7 +34,8 @@ class ArtistById extends Component {
                             title={album.title}
                             image={album.image}
                             year={album.year}
-                            click={() => this.goToAlBumById(album._id)}/>
+                            click={() => this.goToAlBumById(album._id)}
+                            published={album.published ? null : 'unpublished'}/>
                     ))}
                 </CardColumns>
             </Fragment>
@@ -50,7 +53,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onFetchArtist: (id) => dispatch(fetchArtistsById(id)),
-        onFetchAlbums: id => dispatch(fetchAlbumsByArtist(id))
+        onFetchAlbums: id => dispatch(fetchAlbums(id))
     }
 };
 

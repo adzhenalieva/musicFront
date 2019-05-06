@@ -12,6 +12,7 @@ const TrackList = props => {
                             <span className="Track">№ {props.number}</span>
                             <span className="Track"><strong>{props.title}</strong></span>
                             <span className="TrackDuration">{props.duration}</span>
+                            <span className="Publish">{props.published}</span>
                         </CardText>
             </Col>
         </Row>

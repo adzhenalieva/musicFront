@@ -10,6 +10,7 @@ const ArtistsList = props => {
                 <strong className="ml-5">
                     {props.artist}
                 </strong>
+                <p>{props.published}</p>
             </CardBody>
         </Card>
     );

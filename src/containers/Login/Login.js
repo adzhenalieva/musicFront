@@ -53,7 +53,7 @@ class Login extends Component {
                     />
                     <FormGroup row>
                         <Col sm={{offset: 2, size: 10}}/>
-                        <Button type="submit" color="primary">Login</Button>
+                        <Button className="ml-3"  type="submit" color="primary">Login</Button>
                     </FormGroup>
                 </Form>
             </Fragment>

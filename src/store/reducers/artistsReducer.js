@@ -1,4 +1,9 @@
-import {FETCH_ARTIST_BY_ID_SUCCESS, FETCH_ARTISTS_FAILURE, FETCH_ARTISTS_SUCCESS} from "../actions/artistActions";
+import {
+    FETCH_ARTIST_BY_ID_SUCCESS,
+    FETCH_ARTISTS_FAILURE,
+    FETCH_ARTISTS_SUCCESS,
+    SEND_ARTIST_FAILURE
+} from "../actions/artistActions";
 
 const initialState = {
     artists: [],
@@ -17,6 +22,11 @@ const artistsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 artistById: action.data
+            };
+        case SEND_ARTIST_FAILURE:
+            return {
+                ...state,
+                error: action.error
             };
         case FETCH_ARTISTS_FAILURE:
             return {

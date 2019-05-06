@@ -27,7 +27,8 @@ class Artists extends Component {
                         key={artist._id}
                         artist={artist.artist}
                         image={artist.image}
-                        click={() => this.goToArtist(artist._id)}/>
+                        click={() => this.goToArtist(artist._id)}
+                        published={artist.published ? null : 'unpublished'}/>
                 ))}
             </Fragment>
         );

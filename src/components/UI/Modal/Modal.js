@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import BackDrop from "../Backdrop/Backdrop";
-import Iframe from 'react-iframe'
+import ReactPlayer from 'react-player'
 
 import './Modal.css';
 
@@ -18,9 +18,8 @@ const Modal = props => {
                     }
                 }>
                 <button onClick={props.close}>X</button>
-                <Iframe width="540" height="315" src={props.link} frameBorder="0"
-                        allow="autoplay; fullscreen; encrypted-media; gyroscope; picture-in-picture"
-                       />
+                <ReactPlayer url={props.link} playing width="95%"/>
+
             </div>
         </Fragment>
     );

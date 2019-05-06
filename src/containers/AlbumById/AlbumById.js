@@ -7,6 +7,7 @@ import {postHistory} from "../../store/actions/trackHistoryActions";
 import Modal from "../../components/UI/Modal/Modal";
 
 
+
 class AlbumById extends Component {
 
     state = {
@@ -41,7 +42,8 @@ class AlbumById extends Component {
                         title={track.title}
                         duration={track.duration}
                         number={track.number}
-                        play={() => this.addTrack(track._id, track.link)}/>
+                        play={() => this.addTrack(track._id, track.link)}
+                        published={track.published ? null : 'unpublished'}/>
                 ))}
 
                 <Modal show={this.props.show}

@@ -13,9 +13,8 @@ const postHistorySuccess = () => ({type: POST_HISTORY_SUCCESS});
 const postHistoryFailure = error => ({type: POST_HISTORY_FAILURE, error});
 
 export const showHistory = () => {
-    return (dispatch, getState) => {
-        const header = {headers: {'Authorization': getState().users.user.token}};
-        return axios.get('/track_history', header).then(
+    return dispatch => {
+        return axios.get('/track_history').then(
             response => {
                 dispatch(showHistorySuccess(response.data));
             },
@@ -28,11 +27,8 @@ export const showHistory = () => {
 };
 
 export const postHistory = trackData => {
-    return (dispatch, getState) => {
-        let token = getState().users.user.token;
-
-            const header = {headers: {'Authorization': token}};
-            return axios.post('/track_history', trackData, header).then(
+    return dispatch => {
+            return axios.post('/track_history', trackData).then(
                 response => {
                     dispatch(postHistorySuccess(response.data));
                 },

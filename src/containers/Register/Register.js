@@ -58,7 +58,7 @@ class Register extends Component {
                     />
                     <FormGroup row>
                         <Col sm={{offset: 2, size: 10}}/>
-                        <Button type="submit" color="primary">Register</Button>
+                        <Button className="ml-3"  type="submit" color="primary">Register</Button>
                     </FormGroup>
                 </Form>
             </Fragment>

@@ -15,6 +15,7 @@ const AlbumsList = props => {
                     {props.title}
                 </CardTitle>
                 <CardSubtitle>{props.year}</CardSubtitle>
+                <p>{props.published}</p>
             </CardBody>
         </Card>
     );

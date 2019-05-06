@@ -14,6 +14,11 @@ const reducer = (state = initialState, action) => {
                 tracks: action.data,
                 link: action.link
             };
+        case FETCH_TRACKS_FAILURE:
+            return {
+                ...state,
+                error: action.error
+            };
         case CLOSE_MODAL:
             return {
                 ...state,
@@ -25,11 +30,6 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 link: action.link,
                 show: true
-            };
-        case FETCH_TRACKS_FAILURE:
-            return {
-                ...state,
-                error: action.error
             };
         default:
             return state;
