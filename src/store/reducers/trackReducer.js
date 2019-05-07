@@ -1,4 +1,10 @@
-import {CLOSE_MODAL, FETCH_TRACKS_FAILURE, FETCH_TRACKS_SUCCESS, SHOW_MODAL} from "../actions/trackActions";
+import {
+    CLOSE_MODAL,
+    FETCH_TRACKS_FAILURE,
+    FETCH_TRACKS_SUCCESS,
+    SEND_TRACK_FAILURE, SEND_TRACK_SUCCESS,
+    SHOW_MODAL
+} from "../actions/trackActions";
 
 const initialState = {
     tracks: [],
@@ -30,6 +36,16 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 link: action.link,
                 show: true
+            };
+        case SEND_TRACK_FAILURE:
+            return {
+                ...state,
+                error: action.error
+            };
+        case SEND_TRACK_SUCCESS:
+            return {
+                ...state,
+                error: null
             };
         default:
             return state;

@@ -85,7 +85,7 @@ class ArtistAdd extends Component {
                     />
                     <FormGroup row>
                         <Col sm={{offset: 2, size: 10}} />
-                        <Button className="ml-3" type="submit" color="primary">Publish</Button>
+                        <Button className="ml-3" type="submit" color="primary">Create</Button>
                     </FormGroup>
                 </Form>
             </Fragment>

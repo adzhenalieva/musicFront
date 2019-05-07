@@ -7,7 +7,6 @@ import {postHistory} from "../../store/actions/trackHistoryActions";
 import Modal from "../../components/UI/Modal/Modal";
 
 
-
 class AlbumById extends Component {
 
     state = {
@@ -22,7 +21,10 @@ class AlbumById extends Component {
 
     addTrack = (id, link, published) => {
         if (published && this.props.user) {
-            this.props.addTrack({track: id})
+            this.props.addTrack({track: id});
+        }
+        if (!published) {
+            return alert('Track is not published yet');
         }
         this.props.showModal(link)
     };

@@ -1,4 +1,9 @@
-import {FETCH_ALBUM_BY_ID_SUCCESS, FETCH_ALBUMS_FAILURE, FETCH_ALBUMS_SUCCESS} from "../actions/albumActions";
+import {
+    FETCH_ALBUM_BY_ID_SUCCESS,
+    FETCH_ALBUMS_FAILURE,
+    FETCH_ALBUMS_SUCCESS,
+    SEND_ALBUM_FAILURE, SEND_ALBUM_SUCCESS
+} from "../actions/albumActions";
 
 
 const initialState = {
@@ -25,6 +30,16 @@ const albumReducer = (state = initialState, action) => {
             return {
                 ...state,
                 error: action.error
+            };
+        case SEND_ALBUM_FAILURE:
+            return {
+                ...state,
+                error: action.error
+            };
+        case SEND_ALBUM_SUCCESS:
+            return {
+                ...state,
+                error: null
             };
         default:
             return state;

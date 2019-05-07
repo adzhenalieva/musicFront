@@ -64,7 +64,6 @@ class TrackAdd extends Component {
     };
 
     render() {
-        console.log(this.state);
         return (
             <Fragment>
                 {this.props.error && this.props.error.global && (
@@ -137,7 +136,7 @@ class TrackAdd extends Component {
                     />
                     <FormGroup row>
                         <Col sm={{offset: 2, size: 10}}/>
-                        <Button className="ml-3" type="submit" color="primary">Publish</Button>
+                        <Button className="ml-3" type="submit" color="primary">Create</Button>
                     </FormGroup>
                 </Form>
             </Fragment>
@@ -146,7 +145,7 @@ class TrackAdd extends Component {
 }
 
 const mapStateToProps = state => ({
-    error: state.albums.error,
+    error: state.tracks.error,
     user: state.users.user,
     artists: state.artists.artists,
     albums: state.albums.albums

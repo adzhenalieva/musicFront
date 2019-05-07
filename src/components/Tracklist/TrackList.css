@@ -7,13 +7,13 @@
     margin-right: 15px;
 }
 .TrackWrap{
-    background: gold;
+    background: #cccccc;
     padding: 5px 10px;
     border-radius: 5px;
 }
 
 .TrackDuration{
-    color: #cccccc;
+    color: black;
 }
 .Play{
     padding-left: 25px;

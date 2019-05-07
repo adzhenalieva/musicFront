@@ -1,7 +1,7 @@
 import React from 'react';
 import {CardText, Col} from "reactstrap";
-import './TrackList.css';
 import Row from "reactstrap/es/Row";
+import './TrackList.css';
 
 const TrackList = props => {
     return (
