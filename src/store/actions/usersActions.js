@@ -71,3 +71,18 @@ export const loginUser = userData => {
         )
     }
 };
+
+export const facebookLogin = userData => {
+    return dispatch => {
+        return axios.post('/users/facebookLogin', userData).then(
+            response => {
+                dispatch(loginUserSuccess(response.data.user));
+                NotificationManager.success('Logged in via Facebook');
+                dispatch(push('/'));
+            },
+            () => {
+                dispatch(loginUserFailure('Validation via facebook failed'))
+            }
+        )
+    }
+};
